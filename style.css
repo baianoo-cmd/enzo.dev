@@ -1,15 +1,19 @@
+/* Configuracoes gerais: remove os espacos padroes e melhora o controle
+   das dimensoes dos elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo base aplicado a toda a pagina. */
 body {
     background-color: #101114;
     color: #F4F4F5;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif; 
 }
 
+/* Cabecalho: organiza a 'logo' e os atalhos para os topicos em uma linha */
 header {
     display: flex;
     justify-content: space-between;
@@ -23,6 +27,7 @@ header span {
     color: #A3E635;
 }
 
+/* deixa os atalhos de navegacao lado a lado com espaço entre eles */
 nav {
     display: flex;
     gap: 32px;
@@ -33,6 +38,8 @@ nav a {
     text-decoration: none;
 }
 
+/* apresentacao inicial: display flex posiciona o texto e a foto lado a lado.
+   isolation cria uma camada propria para o brilho decorativo ao fundo. */
 .hero {
     display: flex;
     align-items: center;
@@ -44,11 +51,13 @@ nav a {
     isolation:isolate;
 }
 
+/* Limita a largura do texto para manter a leitura confortável. */
 .hero-conteudo {
     flex: 1;
     max-width: 620px;
 }
 
+/* Linha de identificação abaixo do título, com ponto decorativo. */
 .hero-subtitulo {
     display: flex;
     align-items: center;
@@ -59,6 +68,7 @@ nav a {
     margin-bottom: 24px;
 }
 
+/* Texto de apresentação e chamada para ação. */
 .hero-descricao {
     color: #A1A1AA;
     font-size: 17px;
@@ -67,6 +77,7 @@ nav a {
     margin-bottom: 32px;
 }
 
+/* Botao que leva a secao de projetos. */
 .hero-link {
     display: inline-flex;
     align-items: center;
@@ -81,9 +92,11 @@ nav a {
 }
 
 .hero-link:hover {
+    /* Move o botão para cima quando o cursor passa sobre ele. */
     transform: translateY(-3px);
 }
 
+/* Pequeno círculo que acompanha o subtítulo da apresentação. */
 .ponto {
     width: 8px;
     height: 8px;
@@ -92,6 +105,7 @@ nav a {
 }
 
 
+/* Moldura da foto. flex-shrink impede que ela fique comprimida no layout. */
 .hero-foto {
     position: relative;
     flex-shrink: 0;
@@ -105,6 +119,7 @@ nav a {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* A imagem ocupa a moldura e cover evita distorção, recortando o excedente. */
 .hero-foto img {
     display: block;
     width: 100%;
@@ -114,11 +129,13 @@ nav a {
     border-radius: 7px;
 }
 
+/* Destaca a foto ao passar o cursor. */
 .hero-foto:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 35px rgba(163, 230, 53, 0.16);
 }
 
+/* Detalhe decorativo no canto superior da moldura da foto. */
 .foto-detalhe {
     position: absolute;
     top: -8px;
@@ -132,6 +149,7 @@ nav a {
 }
 
 
+/* Hierarquia visual dos títulos da apresentação. */
 .hero h2 {
     color: #A3E635;
     font-size: 18px;
@@ -146,6 +164,7 @@ nav a {
     margin-bottom: 28px;
 }
 
+/* Cor de destaque usada no ponto do nome. */
 .destaque {
     color: #A3E635;
 }
@@ -158,6 +177,9 @@ nav a {
 }
 
 
+/* Brilho verde decorativo atrás da foto.
+   z-index negativo mantem o efeito no fundo e pointer-events evita que
+   ele interfira nos cliques. */
 .hero-brilho {
     position: absolute;
     right: 10%;
@@ -171,6 +193,7 @@ nav a {
 }
 
 
+/* Seção "Sobre mim": espaçamento e estilos dos títulos e texto. */
 .sobre {
     padding: 80px 8%;
 }
@@ -195,6 +218,7 @@ nav a {
 }
 
 
+/* Conteúdo da seção de projetos. */
 .projetos {
     padding: 80px 8%;
 }
@@ -204,6 +228,8 @@ nav a {
     margin-bottom: 32px;
 }
 
+/* Grade de projetos em duas colunas; minmax permite que os cards encolham
+   sem ultrapassar o espaço disponível. */
 .lista-projetos {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -218,6 +244,7 @@ nav a {
     border-radius: 12px;
 }
 
+/* Estilos internos dos cards de projeto. */
 .card-projeto h3 {
     font-size: 22px;
     margin-bottom: 16px;
@@ -239,6 +266,7 @@ nav a {
     text-decoration: underline;
 }
 
+/* Área de contato, separada do restante por uma linha superior. */
 .contato {
     padding: 80px 8% 32px;
     border-top: 1px solid #303138;
@@ -256,6 +284,7 @@ nav a {
     margin-bottom: 32px;
 }
 
+/* Links podem quebrar para outra linha em telas menores. */
 .links-contato {
     display: flex;
     gap: 24px;
@@ -272,12 +301,14 @@ nav a {
     color: #A3E635;
 }
 
+/* Texto de direitos autorais no final da pagina. */
 .copyright {
     color: #71717A;
     font-size: 14px;
     margin-top: 64px;
 }
 
+/* Habilidades: três colunas de cards em telas maiores. */
 .habilidades {
     padding: 80px 8%;
 }
@@ -312,6 +343,7 @@ nav a {
     margin-bottom: 20px;
 }
 
+/* Lista de tecnologias apresentada como etiquetas dentro dos cards. */
 .card-habilidade ul {
     list-style: none;
     display: flex;
@@ -328,6 +360,7 @@ nav a {
     font-size: 14px;
 }
 
+/* Caixa de formação com borda lateral colorida para dar destaque. */
 .formacao {
     margin-top: 32px;
     padding: 24px;
@@ -350,6 +383,7 @@ nav a {
     line-height: 1.8;
 }
 
+/* Formulario organizado verticalmente, com espacamento entre os campos. */
 .form-contato {
     max-width: 600px;
     margin-top: 40px;
@@ -364,6 +398,7 @@ nav a {
     gap: 8px;
 }
 
+/* Campos e etiquetas do formulario. */
 .campo-form label {
     color: #F4F4F5;
     font-size: 15px;
@@ -384,9 +419,11 @@ nav a {
 }
 
 .campo-form textarea {
+    /* Permite aumentar a altura da mensagem, sem alterar sua largura. */
     resize: vertical;
 }
 
+/* Indica visualmente qual campo esta selecionado ou invalido. */
 .campo-form input:focus,
 .campo-form textarea:focus {
     border-color: #A3E635;
@@ -397,6 +434,7 @@ nav a {
     border-color: #EF4444;
 }
 
+/* Botao de envio do formulario. */
 .form-contato button {
     align-self: flex-start;
     padding: 14px 20px;
@@ -411,10 +449,12 @@ nav a {
 }
 
 .form-contato button:hover {
+    /* Mesmo efeito de elevacao usado no botao principal. */
     transform: translateY(-3px);
 }
 
-/* Ajustes para telas médias */
+/* Responsividade para telas medias: reduz espacamentos e dimensoes
+   para acomodar melhor o conteudo em tablets e janelas menores. */
 @media (max-width: 900px) {
     .hero {
         gap: 36px;
@@ -431,7 +471,8 @@ nav a {
     }
 }
 
-/* Ajustes para celulares */
+/* Responsividade para celulares: empilha conteudos e transforma as grades
+   em uma coluna para facilitar a leitura em telas estreitas. */
 @media (max-width: 600px) {
     header {
         padding: 20px 6%;
@@ -493,9 +534,6 @@ nav a {
         max-width: 100%;
     }
 }
-
-
-
 
 
 
