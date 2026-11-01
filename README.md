@@ -37,3 +37,7 @@ Publicação
 O site está publicado pelo GitHub Pages:
 
 https://baianoo-cmd.github.io/enzo.dev/
+
+Vídeo de apresentação: 
+
+https://youtu.be/JxRzUD0KW_g
